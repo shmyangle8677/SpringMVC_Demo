@@ -7,6 +7,6 @@
 <title>SpringMVC和Spring整合示例</title>
 </head>
 <body>
-
+requestScope信息index：${requestScope.msg}
 </body>
 </html>

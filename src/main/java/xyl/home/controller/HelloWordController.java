@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import xyl.home.service.HelloWord;
 
@@ -24,4 +25,16 @@ public class HelloWordController {
 		map.put("msg", msg);
 		return "login";
 	}
+	
+	@RequestMapping("/index2")
+	public ModelAndView login2(Map<String, Object> map) {
+		String msg = helloWordImpl.sayHello("李寻欢", "你永远没我的飞刀快");
+		map.put("msg", msg);
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("login");
+		modelAndView.addObject("msg", map);
+		return modelAndView;
+	}
+	
+	
 }
